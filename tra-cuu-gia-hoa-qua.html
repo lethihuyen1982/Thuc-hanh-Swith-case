@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cuu gia hoa qua</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="qua">
+        <button type="button" onclick="xemGia()">Xem gia</button>
+        <p id="gia"></p>
+    </form>
+    <script>
+        function xemGia() {
+            let gia
+            let qua = document.getElementById("qua").value
+            switch (qua) {
+                case "Ổi":
+                case "Dưa hấu":
+                    document.getElementById("gia").innerText = "20,000VND/kg"
+                    break;
+                case "Táo":
+                case "Xoài":
+                    document.getElementById("gia").innerText = "30,000VND/kg"
+                    break;
+                case "Cam":
+                case "Chôm chôm":
+                    document.getElementById("gia").innerText = "40,000VND/kg"
+                    break;
+                case "Măng cụt":
+                    document.getElementById("gia").innerText = "50,000VND/kg"
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
