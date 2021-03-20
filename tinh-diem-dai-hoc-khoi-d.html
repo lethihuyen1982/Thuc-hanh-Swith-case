@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh diem DH khoi D</title>
+</head>
+
+<body>
+        Môn Toán: <input type="number" id="toan" size="10">;
+        <br>
+        <br>
+        Môn Văn: <input type="number" id="van" size="10">;
+        <br>
+        <br>
+        Môn Tiếng Anh: <input type="number" id="anh" size="10">;
+        <br>
+        <br>
+        Khu vực: <select id="kv">
+            <option value="KV1">KV1</option>
+            <option value="KV2">KV2</option>
+            <option value="KV2 NT">KV2 NT</option>
+            <option value="KV3">KV3</option>
+        </select>
+       
+        <br>
+        <br>
+        <button onclick="tinhDiem()">Tính điểm</button>
+        <p id="sum"></p>
+    <script>
+        function tinhDiem() {
+            let toan = Number(document.getElementById("toan").value)
+            let van = Number(document.getElementById("van").value)
+            let anh = Number(document.getElementById("anh").value)
+            let sum1 = toan + van + anh
+            let kv = document.getElementById("kv").value
+            let sum2
+            switch (kv) {
+                case "KV1":
+                    sum2 = sum1 + 0.75
+                    break;
+                case "KV2":
+                    sum2 = sum1 + 0.25
+                    break;
+                case "KV2-NT":
+                    sum2 = sum1 + 0.50
+                    break;
+                case "KV3":
+                    sum2 = sum1 + 0
+                    break;
+            }
+            document.getElementById("sum").innerHTML = sum2
+        }
+
+    </script>
+</body>
+
+</html>
